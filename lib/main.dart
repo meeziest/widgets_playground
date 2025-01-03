@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:widgets_playground/shaders/shaders_provider.dart';
 
-import 'color_picker/water_color_blending.dart';
+import 'color_orb/water_color_blending.dart';
 
 void main() async {
   final waterColorBlending = await ui.FragmentProgram.fromAsset('lib/shaders/glsl/water_color_blending.frag');

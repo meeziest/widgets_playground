@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:vector_math/vector_math.dart' as vector;
-import 'package:widgets_playground/color_picker/painter.dart';
+import 'package:widgets_playground/color_orb/painter.dart';
 
 class OrbItem {
   final String name;

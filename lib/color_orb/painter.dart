@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:widgets_playground/color_picker/utils.dart';
+import 'package:widgets_playground/color_orb/utils.dart';
 
 import 'color_orb.dart';
 

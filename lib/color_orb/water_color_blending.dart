@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
-import 'package:widgets_playground/color_picker/color_orb.dart';
-import 'package:widgets_playground/color_picker/utils.dart';
+import 'package:widgets_playground/color_orb/utils.dart';
 
 import '../shaders/shaders_provider.dart';
+import 'color_orb.dart';
 
 const orbsColor = Colors.white;
 
