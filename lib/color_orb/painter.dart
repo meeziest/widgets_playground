@@ -5,12 +5,12 @@ import 'package:widgets_playground/color_orb/utils.dart';
 
 import 'color_orb.dart';
 
-/// Painter for the globe.
-class GlobePainter extends CustomPainter {
+/// Painter for the orb.
+class OrbPainter extends CustomPainter {
   final ColorOrbController _controller;
   final Color color;
 
-  GlobePainter(this._controller, this.color) : super(repaint: _controller);
+  OrbPainter(this._controller, this.color) : super(repaint: _controller);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -35,7 +35,7 @@ class GlobePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(GlobePainter oldDelegate) => false;
+  bool shouldRepaint(OrbPainter oldDelegate) => false;
 }
 
 class BackgroundPainter extends CustomPainter {

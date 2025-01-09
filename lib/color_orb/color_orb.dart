@@ -106,8 +106,8 @@ class _ColorOrbState extends State<ColorOrb> with SingleTickerProviderStateMixin
   void _onTick(_) {
     final delta = _position - _lastPanPosition;
 
-    final deltaY = -delta.dy * 0.005;
-    final deltaX = delta.dx * 0.005;
+    final deltaY = -delta.dy * 0.001;
+    final deltaX = delta.dx * 0.001;
 
     final rotationMatrix = vector.Matrix4.rotationY(deltaX) //
       ..multiply(vector.Matrix4.rotationX(deltaY));
@@ -131,7 +131,7 @@ class _ColorOrbState extends State<ColorOrb> with SingleTickerProviderStateMixin
       onPanEnd: (_) => ticker.stop(),
       child: CustomPaint(
         painter: BackgroundPainter(widget.radius, widget.defaultIconColor),
-        foregroundPainter: GlobePainter(_controller, widget.defaultIconColor),
+        foregroundPainter: OrbPainter(_controller, widget.defaultIconColor),
         child: SizedBox.square(dimension: widget.radius * 2),
       ),
     );
