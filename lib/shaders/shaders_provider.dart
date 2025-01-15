@@ -24,8 +24,10 @@ class ShaderProvider extends InheritedWidget {
 
 class ShaderCollection {
   final ui.FragmentProgram waterColorBlending;
+  final ui.FragmentProgram circleWave;
 
   ShaderCollection({
     required this.waterColorBlending,
+    required this.circleWave,
   });
 }

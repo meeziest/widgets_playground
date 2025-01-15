@@ -27,3 +27,4 @@ flutter:
   uses-material-design: true
   shaders:
     - lib/shaders/glsl/water_color_blending.frag
+    - lib/shaders/glsl/shockwave.frag

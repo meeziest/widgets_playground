@@ -3,7 +3,7 @@
 uniform vec2 u_size;       // The size of the canvas
 uniform float u_time;      // Animation time
 uniform vec2 u_mouse;      // Mouse/touch position
-uniform vec3 u_base_color; // Passable color from Flutter
+uniform vec3 u_base_color;
 
 out vec4 frag_color;
 

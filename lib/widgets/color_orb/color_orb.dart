@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:vector_math/vector_math.dart' as vector;
-import 'package:widgets_playground/color_orb/painter.dart';
+import 'package:widgets_playground/widgets/color_orb/painter.dart';
 
 class OrbItem {
   final String name;
@@ -21,7 +21,7 @@ class OrbItem {
 
 class ColorOrbController extends ChangeNotifier {
   List<OrbItem> items = [];
-  final double fullRadius;
+  double fullRadius;
   Color color;
 
   /// Holds the current rotation and transformation matrix
@@ -29,7 +29,8 @@ class ColorOrbController extends ChangeNotifier {
 
   ColorOrbController({required this.color, required this.fullRadius});
 
-  void initialize(int particlesCount) {
+  void generateParticles(int particlesCount, double radius) {
+    fullRadius = radius;
     if (particlesCount < 2) return;
 
     final itemCount = particlesCount;
@@ -92,14 +93,14 @@ class _ColorOrbState extends State<ColorOrb> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     ticker = createTicker(_onTick);
-    _controller.initialize(widget.particlesCount);
+    _controller.generateParticles(widget.particlesCount, widget.radius);
   }
 
   @override
   void didUpdateWidget(covariant ColorOrb oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.particlesCount != oldWidget.particlesCount) {
-      _controller.initialize(widget.particlesCount);
+    if (widget.particlesCount != oldWidget.particlesCount || widget.radius != oldWidget.radius) {
+      _controller.generateParticles(widget.particlesCount, widget.radius);
     }
   }
 
@@ -131,7 +132,7 @@ class _ColorOrbState extends State<ColorOrb> with SingleTickerProviderStateMixin
       onPanEnd: (_) => ticker.stop(),
       child: CustomPaint(
         painter: BackgroundPainter(widget.radius, widget.defaultIconColor),
-        foregroundPainter: OrbPainter(_controller, widget.defaultIconColor),
+        foregroundPainter: OrbPainter(_controller, widget.defaultIconColor, widget.radius),
         child: SizedBox.square(dimension: widget.radius * 2),
       ),
     );

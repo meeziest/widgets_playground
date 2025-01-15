@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:widgets_playground/color_orb/utils.dart';
+import 'package:widgets_playground/widgets/color_orb/utils.dart';
 
 import 'color_orb.dart';
 
@@ -9,8 +9,9 @@ import 'color_orb.dart';
 class OrbPainter extends CustomPainter {
   final ColorOrbController _controller;
   final Color color;
+  final double radius;
 
-  OrbPainter(this._controller, this.color) : super(repaint: _controller);
+  OrbPainter(this._controller, this.color, this.radius) : super(repaint: _controller);
 
   @override
   void paint(Canvas canvas, Size size) {
