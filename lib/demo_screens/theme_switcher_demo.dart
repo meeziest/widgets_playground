@@ -40,6 +40,13 @@ class _DemoScreenState extends State<DemoScreen> {
     animationDuration.addListener(updateView);
   }
 
+  @override
+  void dispose() {
+    colorMixFactor.dispose();
+    animationDuration.dispose();
+    super.dispose();
+  }
+
   void updateView() => setState(() {});
 
   @override
