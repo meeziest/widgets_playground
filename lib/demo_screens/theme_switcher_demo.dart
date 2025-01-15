@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_playground/widgets/elastic_switcher/elastic_blob_widget.dart';
 import 'package:widgets_playground/widgets/theme_switcher/theme_provider.dart';
-import 'package:widgets_playground/widgets/theme_switcher/theme_switcher.dart';
-import 'package:widgets_playground/widgets/theme_switcher/theme_switching_area.dart';
+import 'package:widgets_playground/widgets/theme_switcher/theme_shockwave_area.dart';
+import 'package:widgets_playground/widgets/theme_switcher/theme_switcher_point.dart';
 
 final light = ThemeData.light();
 final dark = ThemeData.dark();
