@@ -24,7 +24,8 @@ class ThemeShockWaveArea extends StatefulWidget {
 
 class _ThemeShockWaveAreaState extends State<ThemeShockWaveArea> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late ThemeModel? _model;
+
+  ThemeModel? _model;
 
   @override
   void initState() {
