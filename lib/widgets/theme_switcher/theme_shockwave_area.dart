@@ -24,7 +24,7 @@ class ThemeShockWaveArea extends StatefulWidget {
 
 class _ThemeShockWaveAreaState extends State<ThemeShockWaveArea> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late ThemeModel _model;
+  late ThemeModel? _model;
 
   @override
   void initState() {
@@ -52,14 +52,14 @@ class _ThemeShockWaveAreaState extends State<ThemeShockWaveArea> with SingleTick
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _model?.removeListener(_onListen);
     _model = ThemeModelInheritedNotifier.of(context);
-    _model.removeListener(_onListen);
-    _model.addListener(_onListen);
+    _model?.addListener(_onListen);
   }
 
   void _onListen() async {
     _controller.forward(from: 0.0).then((value) {
-      _model.isAnimating = false;
+      _model?.isAnimating = false;
     });
   }
 

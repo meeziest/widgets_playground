@@ -98,7 +98,7 @@ class _DemoScreenState extends State<DemoScreen> {
                       children: <Widget>[
                         Slider(
                           min: 0.0,
-                          max: 10.0,
+                          max: 100.0,
                           value: colorMixFactor.value.toDouble(),
                           onChanged: (val) => colorMixFactor.value = val,
                         ),

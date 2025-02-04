@@ -17,7 +17,7 @@ const float POW_EXP         = 20.0;
 const float SHOCK_STRENGTH  = 0.5;
 const float LENSING_SPREAD  = 0.7;
 
-const float MAX_RADIUS = 1.4;
+const float MAX_RADIUS = 1.5;
 
 void main() {
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
